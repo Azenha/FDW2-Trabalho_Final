@@ -24,5 +24,5 @@ module.exports = app => {
   // Fahrenheit 451
   router.delete("/", livro.deleteAll);
 
-  app.use("/api/livro", router);
+  app.use("/api/livros", router);
 };
