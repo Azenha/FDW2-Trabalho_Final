@@ -1,28 +1,28 @@
 module.exports = app => {
-  const livros = require("../controllers/livro.controller.js");
+  const livro = require("../controllers/livro.controller.js");
 
   var router = require("express").Router();
 
   // criar um Livro
-  router.post("/", livros.create);
+  router.post("/", livro.create);
 
-  // recuperar todos os Livros
-  router.get("/", livros.findAll);
+  // recuperar todos os livro
+  router.get("/", livro.findAll);
 
-  // recuperar todos os Livros publicados
-  router.get("/publicado", livros.findAllPublicado);
+  // recuperar todos os livro publicados
+  router.get("/publicado", livro.findAllPublicado);
 
   // recuperar livro com ID
-  router.get("/:id", livros.findOne);
+  router.get("/:id", livro.findOne);
 
   // atualizar livro com ID
-  router.put("/:id", livros.update);
+  router.put("/:id", livro.update);
 
   // deletar livro com ID
-  router.delete("/:id", livros.delete);
+  router.delete("/:id", livro.delete);
 
   // Fahrenheit 451
-  router.delete("/", livros.deleteAll);
+  router.delete("/", livro.deleteAll);
 
-  app.use("/api/livros", router);
+  app.use("/api/livro", router);
 };

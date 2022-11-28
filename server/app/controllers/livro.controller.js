@@ -1,5 +1,5 @@
 const db = require("../models");
-const Livro = db.livros;
+const Livro = db.livro;
 
 // Criar e salvar
 exports.create = (req, res) => {
@@ -129,7 +129,7 @@ exports.deleteAll = (req, res) => {
 };
 
 // Achar todos os livros publicados
-exports.findAllpublicado = (req, res) => {
+exports.findAllPublicado = (req, res) => {
   Livro.find({ publicado: true })
     .then(data => {
       res.send(data);
